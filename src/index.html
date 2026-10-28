@@ -1,0 +1,799 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-src https:; connect-src 'self';"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>言界</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./chat.css" />
+    <link rel="stylesheet" href="./quote.css" />
+  </head>
+  <body data-tab="translate">
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand drag-region">
+          <div class="brand-mark">
+            <img src="../assets/icon-512.png" alt="" draggable="false" />
+          </div>
+          <div class="brand-copy">
+            <strong>言界</strong>
+            <span>YANJIE DESK</span>
+          </div>
+        </div>
+
+        <div class="sidebar-label">工作台</div>
+
+        <nav class="nav" aria-label="工作台导航">
+          <button class="nav-item is-active" type="button" data-tab="translate">
+            <span class="nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 5h9M8.5 3v2M6 9c1.2 2.4 3.1 4.2 5.5 5.3M11.8 8.8C10.5 11.3 8.6 13.4 6.2 15" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+                <path d="M13.5 20l3.2-8 3.3 8M14.7 17h4.1M3.5 20h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+            <span class="nav-text">
+              <span class="nav-title">翻译</span>
+              <span class="nav-sub">Google Translate</span>
+            </span>
+            <span class="nav-active-dot" aria-hidden="true"></span>
+          </button>
+
+          <button class="nav-item" type="button" data-tab="currency">
+            <span class="nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.7" />
+                <path d="M9 8.8l3 6.4 3-6.4M9.8 13.2h4.4M8.7 11.2h6.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+            <span class="nav-text">
+              <span class="nav-title">汇率</span>
+              <span class="nav-sub">Wise 实时换算</span>
+            </span>
+            <span class="nav-active-dot" aria-hidden="true"></span>
+          </button>
+
+          <button class="nav-item" type="button" data-tab="time">
+            <span class="nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.7" />
+                <path d="M12 7.4v5l3.2 1.9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M12 3.5v1.2M20.5 12h-1.2M12 20.5v-1.2M3.5 12h1.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+              </svg>
+            </span>
+            <span class="nav-text">
+              <span class="nav-title">世界时间</span>
+              <span class="nav-sub">World Clock</span>
+            </span>
+            <span class="nav-active-dot" aria-hidden="true"></span>
+          </button>
+
+          <button class="nav-item" type="button" data-tab="chat">
+            <span class="nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4.5 6.6A2.6 2.6 0 017.1 4h7.3a2.6 2.6 0 012.6 2.6v4.2a2.6 2.6 0 01-2.6 2.6H9.2L5.7 16v-2.7a2.6 2.6 0 01-1.2-2.2V6.6z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M17.2 8.4h.3a2.6 2.6 0 012.6 2.6v3.4a2.6 2.6 0 01-2.6 2.6v2.4L14.6 17H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.72" />
+                <path d="M8.2 8.8h5.1M8.2 11.2h3.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+              </svg>
+            </span>
+            <span class="nav-text">
+              <span class="nav-title">DeepSeek</span>
+              <span class="nav-sub">AI 对话助手</span>
+            </span>
+            <span class="nav-active-dot" aria-hidden="true"></span>
+          </button>
+
+          <button class="nav-item" type="button" data-tab="quote">
+            <span class="nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M6.2 3.8h7.4l4.2 4.2v12.2H6.2V3.8z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" />
+                <path d="M13.6 3.8V8h4.2M9.2 12h5.8M9.2 15h5.8M9.2 18h3.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M17.7 16.2v3.4M16 17.9h3.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.7" />
+              </svg>
+            </span>
+            <span class="nav-text">
+              <span class="nav-title">报价</span>
+              <span class="nav-sub">报价计算器</span>
+            </span>
+            <span class="nav-active-dot" aria-hidden="true"></span>
+          </button>
+
+          <button class="nav-item" type="button" data-tab="social">
+            <span class="nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="currentColor" opacity="0.12" />
+                <path d="M13.1 20.2v-6.4h2.1l.35-2.5H13.1V9.7c0-.72.2-1.2 1.25-1.2h1.3V6.3c-.22-.03-.98-.1-1.86-.1-1.85 0-3.12 1.13-3.12 3.2v1.9H8.7v2.5h1.97v6.4z" fill="currentColor" />
+              </svg>
+            </span>
+            <span class="nav-text">
+              <span class="nav-title">社媒</span>
+              <span class="nav-sub">Facebook 运营</span>
+            </span>
+            <span class="nav-active-dot" aria-hidden="true"></span>
+          </button>
+        </nav>
+
+        <div class="sidebar-spacer"></div>
+
+        <div class="online-card">
+          <div class="online-card-head">
+            <span class="online-pulse"></span>
+            <strong>联网工作台</strong>
+          </div>
+          <p>直接加载官方服务，账号、语言、汇率与对话保持实时。</p>
+          <span class="online-card-tag">LIVE · SECURE</span>
+        </div>
+
+        <div class="sidebar-footer">
+          <div class="local-time">
+            <span id="sideDate">10月27日 周一</span>
+            <strong id="sideTime">14:20</strong>
+          </div>
+          <button class="icon-btn subtle" id="helpButton" type="button" title="快捷键与帮助" aria-label="快捷键与帮助">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.6" />
+              <path d="M9.8 9.3a2.25 2.25 0 113.7 1.7c-.9.7-1.5 1.1-1.5 2.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+              <circle cx="12" cy="16.6" r="1" fill="currentColor" />
+            </svg>
+          </button>
+        </div>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar drag-region">
+          <div class="heading">
+            <div class="eyebrow">
+              <span class="eyebrow-dot"></span>
+              <span id="moduleEyebrow">GOOGLE TRANSLATE</span>
+            </div>
+            <div class="heading-line">
+              <h1 id="moduleTitle">翻译</h1>
+              <span class="heading-rule"></span>
+              <p id="moduleSubtitle">即时翻译，跨越语言边界</p>
+            </div>
+          </div>
+
+          <div class="toolbar no-drag">
+            <div class="network-pill" id="networkPill" title="网络状态">
+              <span class="network-dot"></span>
+              <b id="networkText">在线</b>
+            </div>
+
+            <div class="native-pill" id="nativePill">
+              <span class="native-pill-dot"></span>
+              <span>本地工具 · 自动保存</span>
+            </div>
+
+            <div class="tool-group" role="group" aria-label="网页导航">
+              <button class="tool-btn" id="backButton" type="button" title="后退 (Alt + ←)" aria-label="后退">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M14.5 5.5L8 12l6.5 6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+              </button>
+              <button class="tool-btn" id="forwardButton" type="button" title="前进 (Alt + →)" aria-label="前进">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M9.5 5.5L16 12l-6.5 6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+              </button>
+              <button class="tool-btn" id="reloadButton" type="button" title="重新加载 (Ctrl + R)" aria-label="重新加载">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M18.4 9A7.2 7.2 0 106 17.9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" /><path d="M18.6 5.4V9h-3.7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg>
+              </button>
+              <button class="tool-btn" id="externalButton" type="button" title="在浏览器中打开 (Ctrl + Shift + O)" aria-label="在浏览器中打开">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M13.5 5H19v5.5M18.5 5.5l-7 7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /><path d="M17 13.5v4a1.5 1.5 0 01-1.5 1.5h-9A1.5 1.5 0 015 17.5v-9A1.5 1.5 0 016.5 7h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" /></svg>
+              </button>
+            </div>
+
+            <span class="toolbar-divider"></span>
+
+            <div class="window-controls">
+              <button class="window-btn" id="minimizeButton" type="button" title="最小化" aria-label="最小化">
+                <svg viewBox="0 0 12 12"><path d="M2.5 6h7" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" /></svg>
+              </button>
+              <button class="window-btn" id="maximizeButton" type="button" title="最大化" aria-label="最大化">
+                <svg class="icon-maximize" viewBox="0 0 12 12"><rect x="2.5" y="2.5" width="7" height="7" rx="0.7" stroke="currentColor" stroke-width="1.1" fill="none" /></svg>
+                <svg class="icon-restore" viewBox="0 0 12 12"><path d="M4.2 3.2h4.6v4.6M3.2 4.2v4.6h4.6" stroke="currentColor" stroke-width="1.1" fill="none" stroke-linejoin="round" /></svg>
+              </button>
+              <button class="window-btn close-btn" id="closeButton" type="button" title="关闭" aria-label="关闭">
+                <svg viewBox="0 0 12 12"><path d="M3 3l6 6M9 3L3 9" stroke="currentColor" stroke-width="1.15" stroke-linecap="round" /></svg>
+              </button>
+            </div>
+          </div>
+        </header>
+
+        <section class="content">
+          <div class="browser-card">
+            <div class="load-progress" id="loadProgress" aria-hidden="true"><span></span></div>
+
+            <div class="views">
+              <div class="view is-active" data-view="translate">
+                <webview
+                  id="webview-translate"
+                  class="webview"
+                  partition="persist:yanjie"
+                  allowpopups
+                  webpreferences="contextIsolation=yes, nodeIntegration=no, sandbox=yes"
+                ></webview>
+                <div class="view-state" data-state="loading" data-view-state="translate">
+                  <div class="loading-panel">
+                    <div class="loading-orb">
+                      <span class="orbit orbit-one"></span>
+                      <span class="orbit orbit-two"></span>
+                      <img src="../assets/icon-512.png" alt="" />
+                    </div>
+                    <p class="state-kicker">正在建立连接</p>
+                    <h2>打开 Google 翻译</h2>
+                    <p class="state-note">首次载入会稍慢，之后将保持页面状态</p>
+                    <div class="loading-dots"><i></i><i></i><i></i></div>
+                  </div>
+                  <div class="error-panel">
+                    <div class="error-icon">
+                      <svg viewBox="0 0 24 24" fill="none"><path d="M12 8v5M12 16.3v.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /><path d="M10.3 4.7L3 18a2 2 0 001.8 3h14.4a2 2 0 001.8-3L13.7 4.7a2 2 0 00-3.4 0z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" /></svg>
+                    </div>
+                    <p class="state-kicker">CONNECTION INTERRUPTED</p>
+                    <h2>页面暂时无法打开</h2>
+                    <p class="state-note error-detail">请检查网络连接后重试。</p>
+                    <div class="error-actions">
+                      <button class="primary-btn retry-button" type="button">重新连接</button>
+                      <button class="ghost-btn external-fallback" type="button">在浏览器中打开</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="view" data-view="currency">
+                <webview
+                  id="webview-currency"
+                  class="webview"
+                  partition="persist:yanjie"
+                  allowpopups
+                  webpreferences="contextIsolation=yes, nodeIntegration=no, sandbox=yes"
+                ></webview>
+                <div class="view-state" data-state="loading" data-view-state="currency">
+                  <div class="loading-panel">
+                    <div class="loading-orb">
+                      <span class="orbit orbit-one"></span>
+                      <span class="orbit orbit-two"></span>
+                      <img src="../assets/icon-512.png" alt="" />
+                    </div>
+                    <p class="state-kicker">正在获取实时数据</p>
+                    <h2>打开 Wise 汇率换算</h2>
+                    <p class="state-note">汇率由 Wise 实时提供</p>
+                    <div class="loading-dots"><i></i><i></i><i></i></div>
+                  </div>
+                  <div class="error-panel">
+                    <div class="error-icon">
+                      <svg viewBox="0 0 24 24" fill="none"><path d="M12 8v5M12 16.3v.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /><path d="M10.3 4.7L3 18a2 2 0 001.8 3h14.4a2 2 0 001.8-3L13.7 4.7a2 2 0 00-3.4 0z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" /></svg>
+                    </div>
+                    <p class="state-kicker">CONNECTION INTERRUPTED</p>
+                    <h2>汇率页面暂时无法打开</h2>
+                    <p class="state-note error-detail">请检查网络连接后重试。</p>
+                    <div class="error-actions">
+                      <button class="primary-btn retry-button" type="button">重新连接</button>
+                      <button class="ghost-btn external-fallback" type="button">在浏览器中打开</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="view" data-view="time">
+                <webview
+                  id="webview-time"
+                  class="webview"
+                  partition="persist:yanjie"
+                  allowpopups
+                  webpreferences="contextIsolation=yes, nodeIntegration=no, sandbox=yes"
+                ></webview>
+                <div class="view-state" data-state="loading" data-view-state="time">
+                  <div class="loading-panel">
+                    <div class="loading-orb">
+                      <span class="orbit orbit-one"></span>
+                      <span class="orbit orbit-two"></span>
+                      <img src="../assets/icon-512.png" alt="" />
+                    </div>
+                    <p class="state-kicker">正在同步世界时区</p>
+                    <h2>打开世界时间</h2>
+                    <p class="state-note">自动校准全球主要城市时间</p>
+                    <div class="loading-dots"><i></i><i></i><i></i></div>
+                  </div>
+                  <div class="error-panel">
+                    <div class="error-icon">
+                      <svg viewBox="0 0 24 24" fill="none"><path d="M12 8v5M12 16.3v.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /><path d="M10.3 4.7L3 18a2 2 0 001.8 3h14.4a2 2 0 001.8-3L13.7 4.7a2 2 0 00-3.4 0z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" /></svg>
+                    </div>
+                    <p class="state-kicker">CONNECTION INTERRUPTED</p>
+                    <h2>世界时间暂时无法打开</h2>
+                    <p class="state-note error-detail">请检查网络连接后重试。</p>
+                    <div class="error-actions">
+                      <button class="primary-btn retry-button" type="button">重新连接</button>
+                      <button class="ghost-btn external-fallback" type="button">在浏览器中打开</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="view" data-view="social">
+                <webview
+                  id="webview-social"
+                  class="webview"
+                  partition="persist:yanjie"
+                  allowpopups
+                  webpreferences="contextIsolation=yes, nodeIntegration=no, sandbox=yes"
+                ></webview>
+                <div class="view-state" data-state="loading" data-view-state="social">
+                  <div class="loading-panel">
+                    <div class="loading-orb">
+                      <span class="orbit orbit-one"></span>
+                      <span class="orbit orbit-two"></span>
+                      <img src="../assets/icon-512.png" alt="" />
+                    </div>
+                    <p class="state-kicker">正在连接 Facebook</p>
+                    <h2>打开社媒工作台</h2>
+                    <p class="state-note">登录一次即可保持会话，主页、消息、广告后台通用</p>
+                    <div class="loading-dots"><i></i><i></i><i></i></div>
+                  </div>
+                  <div class="error-panel">
+                    <div class="error-icon">
+                      <svg viewBox="0 0 24 24" fill="none"><path d="M12 8v5M12 16.3v.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /><path d="M10.3 4.7L3 18a2 2 0 001.8 3h14.4a2 2 0 001.8-3L13.7 4.7a2 2 0 00-3.4 0z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" /></svg>
+                    </div>
+                    <p class="state-kicker">CONNECTION INTERRUPTED</p>
+                    <h2>Facebook 暂时无法打开</h2>
+                    <p class="state-note error-detail">请检查网络连接后重试。</p>
+                    <div class="error-actions">
+                      <button class="primary-btn retry-button" type="button">重新连接</button>
+                      <button class="ghost-btn external-fallback" type="button">在浏览器中打开</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+                <div class="view" data-view="chat">
+                  <div class="chat-shell">
+                   <section class="chat-panel" id="chatPanel">
+                     <header class="chat-head">
+                       <div class="chat-mode" role="tablist" aria-label="对话模式">
+                         <button class="chat-mode-btn is-active" type="button" data-chat-mode="api" role="tab">
+                           <span class="chat-mode-dot"></span>API 对话
+                         </button>
+                         <button class="chat-mode-btn" type="button" data-chat-mode="web" role="tab">
+                           网页版
+                         </button>
+                       </div>
+                       <div class="chat-head-right">
+                         <span class="chat-key-state" id="chatKeyState"><i></i>未配置 API Key</span>
+                         <label class="chat-model-wrap">
+                           <span>模型</span>
+                           <select id="chatModel" class="chat-model">
+                             <option value="deepseek-chat">deepseek-chat</option>
+                             <option value="deepseek-reasoner">deepseek-reasoner</option>
+                           </select>
+                         </label>
+                         <button class="chat-icon-btn" id="chatNew" type="button" title="新建对话" aria-label="新建对话">
+                           <svg viewBox="0 0 24 24" fill="none"><path d="M12 5.5v13M5.5 12h13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg>
+                         </button>
+                         <button class="chat-icon-btn" id="chatSettings" type="button" title="API 设置" aria-label="API 设置">
+                           <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="2.9" stroke="currentColor" stroke-width="1.6" /><path d="M12 4.2v1.6M12 18.2v1.6M4.2 12h1.6M18.2 12h1.6M6.6 6.6l1.2 1.2M16.2 16.2l1.2 1.2M17.4 6.6l-1.2 1.2M7.8 16.2l-1.2 1.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /></svg>
+                         </button>
+                       </div>
+                     </header>
+
+                     <div class="chat-body" id="chatBody">
+                       <div class="chat-thread" id="chatThread">
+                         <div class="chat-empty" id="chatEmpty">
+                           <div class="chat-empty-mark">
+                             <img src="../assets/icon-512.png" alt="" />
+                           </div>
+                           <h3>外贸工作台 · AI 助手</h3>
+                           <p>已接入 DeepSeek 官方 API，回复更快、无需登录，可结合当前报价单一起分析。</p>
+                           <div class="chat-prompts" id="chatPrompts">
+                             <button type="button" class="chat-prompt" data-prompt="把下面这段客户邮件翻译成中文，并指出客户的真实诉求和潜在风险：">翻译客户邮件</button>
+                             <button type="button" class="chat-prompt" data-prompt="帮我写一封英文报价邮件，语气专业、简洁，突出交货期和质保优势，结尾引导客户确认订单：">写报价邮件</button>
+                             <button type="button" class="chat-prompt" data-prompt="客户说价格高了 8%，请给我 3 套不降价的谈判话术，每套给出适用场景和英文原句：">还价谈判话术</button>
+                             <button type="button" class="chat-prompt" data-prompt="根据当前报价单，帮我检查报价结构是否合理，并指出可能被客户压价的环节：">检查报价合理性</button>
+                           </div>
+                         </div>
+                         <div class="chat-messages" id="chatMessages"></div>
+                       </div>
+                     </div>
+
+                     <form class="chat-composer" id="chatComposer" autocomplete="off">
+                       <div class="chat-input-wrap">
+                         <textarea id="chatInput" rows="1" placeholder="输入问题，Enter 发送，Shift + Enter 换行"></textarea>
+                       </div>
+                       <div class="chat-composer-bar">
+                         <div class="chat-composer-left">
+                           <button type="button" class="chat-chip" id="chatQuoteContext">
+                             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.2 3.8h7.4l4.2 4.2V20H6.2V3.8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" /><path d="M13.6 3.8V8h4.2M9 12h6M9 15.2h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" /></svg>
+                             带入报价摘要
+                           </button>
+                           <span class="chat-hint-text" id="chatHintText"></span>
+                         </div>
+                         <div class="chat-actions">
+                           <button type="submit" class="chat-send" id="chatSend">发送</button>
+                           <button type="button" class="chat-stop" id="chatStop" hidden>停止</button>
+                         </div>
+                       </div>
+                     </form>
+                   </section>
+
+                   <div class="chat-web" id="chatWeb" hidden>
+                     <webview
+                       id="webview-chat"
+                       class="webview"
+                       partition="persist:yanjie"
+                       allowpopups
+                       webpreferences="contextIsolation=yes, nodeIntegration=no, sandbox=yes"
+                     ></webview>
+                     <div class="view-state" data-state="loading" data-view-state="chat">
+                       <div class="loading-panel">
+                         <div class="loading-orb">
+                           <span class="orbit orbit-one"></span>
+                           <span class="orbit orbit-two"></span>
+                           <img src="../assets/icon-512.png" alt="" />
+                         </div>
+                         <p class="state-kicker">正在连接 AI 助手</p>
+                         <h2>打开 DeepSeek Chat</h2>
+                         <p class="state-note">登录状态与历史对话会自动保留</p>
+                         <div class="loading-dots"><i></i><i></i><i></i></div>
+                       </div>
+                       <div class="error-panel">
+                         <div class="error-icon">
+                           <svg viewBox="0 0 24 24" fill="none"><path d="M12 8v5M12 16.3v.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /><path d="M10.3 4.7L3 18a2 2 0 001.8 3h14.4a2 2 0 001.8-3L13.7 4.7a2 2 0 00-3.4 0z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" /></svg>
+                         </div>
+                         <p class="state-kicker">CONNECTION INTERRUPTED</p>
+                         <h2>DeepSeek 暂时无法打开</h2>
+                         <p class="state-note error-detail">请检查网络连接后重试。</p>
+                         <div class="error-actions">
+                           <button class="primary-btn retry-button" type="button">重新连接</button>
+                           <button class="ghost-btn external-fallback" type="button">在浏览器中打开</button>
+                         </div>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+
+              <div class="view" data-view="quote">
+                <div class="quote-workspace">
+                  <div class="quote-form-pane">
+                    <div class="quote-scroll">
+                      <div class="quote-intro">
+                        <div>
+                          <span class="quote-kicker">PRICING WORKBENCH</span>
+                          <h2>报价测算</h2>
+                          <p>按成本、费用与目标利润测算，实时生成可直接发送给客户的报价单。</p>
+                        </div>
+                        <div class="quote-save-state" id="quoteSaveState">
+                          <span></span>
+                          已自动保存
+                        </div>
+                      </div>
+
+                      <div class="quote-metrics">
+                        <div class="quote-metric">
+                          <span>总成本</span>
+                          <strong id="quoteMetricCost">¥0.00</strong>
+                          <small>产品成本 + 各项费用</small>
+                        </div>
+                        <div class="quote-metric is-accent">
+                          <span>报价总额</span>
+                          <strong id="quoteMetricTotal">$0.00</strong>
+                          <small id="quoteMetricDiscount">无折扣</small>
+                        </div>
+                        <div class="quote-metric">
+                          <span>预计毛利</span>
+                          <strong id="quoteMetricProfit">$0.00</strong>
+                          <small id="quoteMetricMargin">0.0%</small>
+                        </div>
+                      </div>
+
+                      <section class="quote-section">
+                        <div class="quote-section-head">
+                          <span class="quote-section-index">01</span>
+                          <div>
+                            <h3>报价信息</h3>
+                            <p>客户、贸易条款与报价编号</p>
+                          </div>
+                        </div>
+                        <div class="quote-form-grid">
+                          <label class="quote-field quote-span-2">
+                            <span>客户名称 <em>*</em></span>
+                            <input id="quoteCustomer" type="text" placeholder="例如：Al Noor Trading LLC" autocomplete="off" />
+                          </label>
+                          <label class="quote-field">
+                            <span>客户联系人</span>
+                            <input id="quoteContact" type="text" placeholder="姓名 / 职位" autocomplete="off" />
+                          </label>
+                          <label class="quote-field">
+                            <span>目的港</span>
+                            <input id="quoteDestination" type="text" placeholder="例如：Jebel Ali" autocomplete="off" />
+                          </label>
+                          <label class="quote-field">
+                            <span>贸易术语</span>
+                            <select id="quoteTradeTerm">
+                              <option value="FOB">FOB</option>
+                              <option value="CIF">CIF</option>
+                              <option value="CFR">CFR</option>
+                              <option value="EXW">EXW</option>
+                              <option value="DDP">DDP</option>
+                            </select>
+                          </label>
+                          <label class="quote-field">
+                             <span>报价币种</span>
+                             <select id="quoteCurrency">
+                               <option value="USD">USD · 美元</option>
+                               <option value="EUR">EUR · 欧元</option>
+                               <option value="GBP">GBP · 英镑</option>
+                               <option value="JPY">JPY · 日元</option>
+                               <option value="AUD">AUD · 澳元</option>
+                               <option value="CAD">CAD · 加元</option>
+                               <option value="AED">AED · 迪拉姆</option>
+                               <option value="SAR">SAR · 里亚尔</option>
+                               <option value="RUB">RUB · 卢布</option>
+                               <option value="CNY">CNY · 人民币</option>
+                             </select>
+                          </label>
+                          <label class="quote-field">
+                            <span id="quoteRateLabel">汇率 · 1 USD = ? CNY</span>
+                            <div class="quote-rate-row">
+                              <input id="quoteRate" type="number" min="0" step="0.0001" inputmode="decimal" />
+                              <button class="quote-rate-btn" id="quoteRefreshRate" type="button" title="从公开汇率接口获取最新中间价">
+                                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 12a8 8 0 10-2.7 6.05" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /><path d="M20.2 6.6v4.2h-4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                                实时汇率
+                              </button>
+                            </div>
+                            <em class="quote-rate-hint" id="quoteRateHint">手动填写，或点「实时汇率」自动获取</em>
+                          </label>
+                          <label class="quote-field">
+                            <span>报价单号</span>
+                            <input id="quoteNo" type="text" autocomplete="off" />
+                          </label>
+                          <label class="quote-field">
+                            <span>报价日期</span>
+                            <input id="quoteDate" type="date" />
+                          </label>
+                          <label class="quote-field">
+                            <span>有效期（天）</span>
+                            <input id="quoteValidity" type="number" min="1" max="365" step="1" inputmode="numeric" />
+                          </label>
+                        </div>
+                      </section>
+
+                      <section class="quote-section">
+                        <div class="quote-section-head">
+                          <span class="quote-section-index">02</span>
+                          <div>
+                            <h3>产品与成本</h3>
+                            <p>成本按人民币录入，报价按汇率自动换算</p>
+                          </div>
+                          <button class="quote-add-btn" id="quoteAddItem" type="button">
+                            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5.5v13M5.5 12h13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg>
+                            添加产品
+                          </button>
+                        </div>
+                        <div class="quote-items" id="quoteItems"></div>
+
+                        <div class="quote-cost-band">
+                          <label class="quote-field">
+                            <span>国内费用 <small>CNY</small></span>
+                            <input id="quoteDomesticFee" type="number" min="0" step="100" inputmode="decimal" />
+                          </label>
+                          <label class="quote-field">
+                            <span>海运费 <small class="quote-currency-code">USD</small></span>
+                            <input id="quoteFreight" type="number" min="0" step="100" inputmode="decimal" />
+                          </label>
+                          <label class="quote-field">
+                            <span>保险费 <small class="quote-currency-code">USD</small></span>
+                            <input id="quoteInsurance" type="number" min="0" step="100" inputmode="decimal" />
+                          </label>
+                          <label class="quote-field">
+                            <span>其他费用 <small class="quote-currency-code">USD</small></span>
+                            <input id="quoteOther" type="number" min="0" step="100" inputmode="decimal" />
+                          </label>
+                          <label class="quote-field">
+                            <span>目标利润率 <small>%</small></span>
+                            <input id="quoteProfit" type="number" min="0" max="500" step="0.5" inputmode="decimal" />
+                          </label>
+                          <label class="quote-field">
+                            <span>折扣 <small>%</small></span>
+                            <input id="quoteDiscount" type="number" min="0" max="100" step="0.5" inputmode="decimal" />
+                          </label>
+                        </div>
+                      </section>
+
+                      <section class="quote-section">
+                        <div class="quote-section-head">
+                          <span class="quote-section-index">03</span>
+                          <div>
+                            <h3>条款与报价方</h3>
+                            <p>这些内容会显示在 PDF / Excel 报价单中</p>
+                          </div>
+                        </div>
+                        <div class="quote-form-grid">
+                          <label class="quote-field quote-span-2">
+                            <span>报价方公司</span>
+                            <input id="quoteSellerCompany" type="text" placeholder="你的公司名称" autocomplete="off" />
+                          </label>
+                          <label class="quote-field">
+                            <span>报价方联系人</span>
+                            <input id="quoteSellerContact" type="text" placeholder="姓名" autocomplete="off" />
+                          </label>
+                          <label class="quote-field">
+                            <span>电话 / WhatsApp</span>
+                            <input id="quoteSellerPhone" type="text" placeholder="+86 ..." autocomplete="off" />
+                          </label>
+                          <label class="quote-field quote-span-2">
+                            <span>邮箱</span>
+                            <input id="quoteSellerEmail" type="email" placeholder="sales@company.com" autocomplete="off" />
+                          </label>
+                          <label class="quote-field quote-span-2">
+                            <span>公司地址</span>
+                            <input id="quoteSellerAddress" type="text" placeholder="城市 / 国家" autocomplete="off" />
+                          </label>
+                          <label class="quote-field quote-span-2">
+                            <span>付款方式</span>
+                            <input id="quotePayment" type="text" />
+                          </label>
+                          <label class="quote-field">
+                            <span>交货期</span>
+                            <input id="quoteDelivery" type="text" />
+                          </label>
+                          <label class="quote-field">
+                            <span>报价有效期</span>
+                            <span class="quote-readonly" id="quoteValidUntil">—</span>
+                          </label>
+                          <label class="quote-field quote-span-2">
+                            <span>备注</span>
+                            <textarea id="quoteNotes" rows="2" placeholder="包装、配置、质保等补充说明"></textarea>
+                          </label>
+                        </div>
+                      </section>
+
+                       <div class="quote-actions">
+                         <div class="quote-export-scope">
+                           <span>导出语言</span>
+                           <select id="quoteExportScope">
+                             <option value="both">中文 + English</option>
+                             <option value="zh">仅中文</option>
+                             <option value="en">仅 English</option>
+                           </select>
+                         </div>
+                         <button class="quote-primary-btn" id="quoteExportPdf" type="button">
+                           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4v11M7.5 10.5L12 15l4.5-4.5M5 19.5h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                           <span data-export-label>导出中英 PDF</span>
+                         </button>
+                         <button class="quote-secondary-btn" id="quoteExportExcel" type="button">
+                           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3.8h8l4 4V20H6V3.8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" /><path d="M14 3.8V8h4M9 11l4 5M13 11l-4 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                           <span data-export-label>导出中英 Excel</span>
+                         </button>
+                         <button class="quote-tertiary-btn" id="quoteCopySummary" type="button">复制摘要</button>
+                         <button class="quote-tertiary-btn" id="quoteSaveLibrary" type="button">存入报价库</button>
+                         <button class="quote-text-btn" id="quoteOpenLibrary" type="button">
+                           报价库 <b class="quote-library-count" id="quoteLibraryCount">0</b>
+                         </button>
+                         <button class="quote-text-btn" id="quoteReset" type="button">清空重填</button>
+                         <span class="quote-export-note" id="quoteExportNote">一次生成中文版 + English 版</span>
+                       </div>
+                    </div>
+                  </div>
+
+                  <div class="quote-preview-pane">
+                    <div class="quote-preview-head">
+                      <span><i></i><b id="quotePreviewLabel">实时预览</b></span>
+                      <div class="quote-preview-actions">
+                        <div class="quote-lang-toggle" id="quoteLangToggle">
+                          <button type="button" data-quote-lang="zh" class="is-active">中文</button>
+                          <button type="button" data-quote-lang="en">English</button>
+                        </div>
+                        <span>A4</span>
+                      </div>
+                    </div>
+                    <div class="quote-paper-scroll">
+                      <article class="quote-paper" id="quotePaper"></article>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <footer class="statusbar">
+          <div class="status-left">
+            <span class="status-light" id="statusLight"></span>
+            <span id="currentHost">translate.google.com</span>
+            <span class="status-separator">/</span>
+            <span id="loadStatus">已连接</span>
+          </div>
+          <div class="status-right">
+            <span class="status-hint">Ctrl + 1 – 6 切换工作台</span>
+            <span class="status-separator">·</span>
+            <span id="appVersion">v1.6.0</span>
+          </div>
+        </footer>
+      </main>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite">
+      <span class="toast-indicator"></span>
+      <span id="toastText">已完成</span>
+    </div>
+
+    <div class="modal-backdrop" id="helpModal" hidden>
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+        <button class="modal-close" id="helpClose" type="button" aria-label="关闭">
+          <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" /></svg>
+        </button>
+        <p class="modal-kicker">QUICK REFERENCE</p>
+        <h2 id="helpTitle">键盘快捷键</h2>
+        <p class="modal-intro">像使用浏览器一样使用言界。快捷键在网页内同样有效。</p>
+        <div class="shortcut-list">
+          <div class="shortcut-row"><span>切换五个工作台</span><span class="keys"><kbd>Ctrl</kbd><kbd>1</kbd><em>·</em><kbd>2</kbd><em>·</em><kbd>3</kbd><em>·</em><kbd>4</kbd><em>·</em><kbd>5</kbd></span></div>
+          <div class="shortcut-row"><span>重新加载当前页面</span><span class="keys"><kbd>Ctrl</kbd><kbd>R</kbd></span></div>
+          <div class="shortcut-row"><span>后退 / 前进</span><span class="keys"><kbd>Alt</kbd><kbd>←</kbd><em>/</em><kbd>→</kbd></span></div>
+          <div class="shortcut-row"><span>放大 / 缩小 / 重置</span><span class="keys"><kbd>Ctrl</kbd><kbd>+</kbd><em>/</em><kbd>−</kbd><em>/</em><kbd>0</kbd></span></div>
+          <div class="shortcut-row"><span>在默认浏览器中打开</span><span class="keys"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>O</kbd></span></div>
+          <div class="shortcut-row"><span>全屏</span><span class="keys"><kbd>F11</kbd></span></div>
+        </div>
+        <div class="modal-foot">
+          <span>右键网页可打开链接、复制或刷新</span>
+          <span id="modalVersion">言界 1.2.0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-backdrop" id="quoteLibraryModal" hidden>
+      <div class="modal quote-library-modal" role="dialog" aria-modal="true" aria-labelledby="quoteLibraryTitle">
+        <button class="modal-close" id="quoteLibraryClose" type="button" aria-label="关闭">
+          <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" /></svg>
+        </button>
+        <p class="modal-kicker">QUOTE LIBRARY</p>
+        <h2 id="quoteLibraryTitle">报价库</h2>
+        <p class="modal-intro">报价版本保存在本机，最多保留 30 份。载入后可继续修改并重新导出。</p>
+        <div class="quote-library-list" id="quoteLibraryList"></div>
+      </div>
+    </div>
+
+    <div class="modal-backdrop" id="chatSettingsModal" hidden>
+      <div class="modal chat-settings-modal" role="dialog" aria-modal="true" aria-labelledby="chatSettingsTitle">
+        <button class="modal-close" id="chatSettingsClose" type="button" aria-label="关闭">
+          <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" /></svg>
+        </button>
+        <p class="modal-kicker">DEEPSEEK API</p>
+        <h2 id="chatSettingsTitle">接口设置</h2>
+        <p class="modal-intro">
+          API Key 会使用系统密钥库加密后保存在本机（%APPDATA%\YanJieData），仅在请求时发往你填写的接口地址。
+          可在 platform.deepseek.com 创建 Key。
+        </p>
+        <div class="chat-settings-grid">
+          <label class="quote-field quote-span-2">
+            <span>API Key</span>
+            <input id="chatApiKey" type="password" autocomplete="off" spellcheck="false" placeholder="sk-xxxxxxxxxxxxxxxx" />
+          </label>
+          <label class="quote-field quote-span-2">
+            <span>接口地址</span>
+            <input id="chatBaseUrl" type="text" autocomplete="off" spellcheck="false" placeholder="https://api.deepseek.com" />
+          </label>
+          <label class="quote-field">
+            <span>默认模型</span>
+            <select id="chatSettingsModel">
+              <option value="deepseek-chat">deepseek-chat（通用对话）</option>
+              <option value="deepseek-reasoner">deepseek-reasoner（深度思考）</option>
+            </select>
+          </label>
+          <label class="quote-field">
+            <span>温度 <small>0 - 2</small></span>
+            <input id="chatTemperature" type="number" min="0" max="2" step="0.1" inputmode="decimal" />
+          </label>
+        </div>
+        <p class="chat-settings-status" id="chatSettingsStatus"></p>
+        <div class="chat-settings-foot">
+          <button class="ghost-btn" id="chatTestKey" type="button">测试连接</button>
+          <button class="chat-clear-key" id="chatClearKey" type="button">清除 Key</button>
+          <button class="primary-btn" id="chatSaveKey" type="button">保存设置</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./quote.js"></script>
+    <script src="./chat.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

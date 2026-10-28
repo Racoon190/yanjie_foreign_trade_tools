@@ -1,0 +1,12 @@
+{
+  "name": "yanjie-desktop",
+  "version": "1.6.0",
+  "description": "言界 · 翻译、DeepSeek、实时汇率、世界时间与中英双语报价单的一体化桌面工作台",
+  "main": "electron/main.js",
+  "author": "YanJie",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "exceljs": "^4.4.0"
+  }
+}
