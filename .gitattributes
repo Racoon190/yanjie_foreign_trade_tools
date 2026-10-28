@@ -1,0 +1,5 @@
+# 统一换行符，避免在 Windows 上 checkout 后出现整文件差异
+* text=auto eol=lf
+*.png binary
+*.ico binary
+*.asar binary
