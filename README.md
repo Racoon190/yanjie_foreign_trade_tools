@@ -6,11 +6,33 @@
 
 ## 下载
 
-前往 [**Releases**](https://github.com/Racoon190/yanjie_foreign_trade_tools/releases) 页面下载最新版：
+前往 [**Releases · v1.6.0**](https://github.com/Racoon190/yanjie_foreign_trade_tools/releases/tag/v1.6.0)。
+
+> 上传时本机上行链路对单个连接有约 90 秒 / 8 MB 的限制，162 MiB 的安装包无法一次性上传，
+> 因此 Release 里按 **4 MB 分卷**存放：`YanJie-1.6.0-portable.zip.part01` … `part41`。
+> 下载后需要先合并，下面两种方式任选其一。
+
+### 方式一：一键下载并合并（推荐）
+
+```powershell
+# 需要一个 fine-grained GitHub Token，权限只需 Contents: Read
+# https://github.com/settings/personal-access-tokens/new
+powershell -ExecutionPolicy Bypass -File .\tools\download-release.ps1
+```
+
+脚本会下载全部分卷到 `parts\`（可断点续传）、合并为 `YanJie-1.6.0-portable.zip`，
+并用下面列出的 SHA256 自动校验。
+
+### 方式二：手动下载 + 合并
+
+1. 在 Release 页面依次下载全部 41 个分卷，**保持文件名不变**，放到同一个文件夹。
+2. 把本仓库的 [`tools/merge-parts.cmd`](tools/merge-parts.cmd) 复制到该文件夹，双击运行。
+3. 得到 `YanJie-1.6.0-portable.zip`，解压后双击 `言界.exe` 即可运行。
 
 | 文件 | 说明 |
 | --- | --- |
-| `YanJie-1.6.0-portable.zip` | Windows 便携版，解压后双击 `言界.exe` 即可运行 |
+| `YanJie-1.6.0-portable.zip.part01` … `part41` | 安装包分卷（各 4 MB，最后一个略小） |
+| `YanJie-1.6.0-portable.zip`（合并后） | Windows 便携版，162 MiB，解压即用 |
 
 发布包为通用构建，**不含任何预置 API Key 或用户数据**（`YanJieData` 目录已从发布包中移除）。
 首次使用请在「DeepSeek → 右上角齿轮」填入你自己的 API Key，Key 会用 Windows DPAPI 加密后
