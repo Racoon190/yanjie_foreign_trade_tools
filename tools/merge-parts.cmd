@@ -8,7 +8,7 @@ set "OUT=YanJie-1.6.0-portable.zip"
 if not exist "%OUT%.part01" (
     echo [错误] 当前目录没有找到 %OUT%.part01
     echo.
-    echo 请先在 Release 页面下载全部分卷，保持文件名不变，和本脚本放在同一个文件夹。
+    echo 请先在 Release 页面下载全部分卷，保持文件名不变，并和本脚本放在同一个文件夹。
     echo.
     pause
     exit /b 1

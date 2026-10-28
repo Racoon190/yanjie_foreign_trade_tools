@@ -22,3 +22,7 @@ desktop.ini
 .env
 .env.*
 deepseek-config.json
+
+# 本地临时文件
+.tmp/
+.parts/

@@ -3,3 +3,7 @@
 *.png binary
 *.ico binary
 *.asar binary
+
+# Windows 批处理必须是 CRLF，且不能做换行转换（网页端 Raw 下载也要能直接双击运行）
+*.cmd -text
+*.bat -text
